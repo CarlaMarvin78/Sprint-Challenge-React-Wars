@@ -11,6 +11,7 @@ function People () {
       axios.get(`https://swapi.co/api/people/`)
       .then(response => {
         const data=response.data;
+        console.log (data);
         setPeople(data.results.map((person,idx)=><Grid.Column key={idx}><Card person={person}/></Grid.Column>));
       })
     }, [])
